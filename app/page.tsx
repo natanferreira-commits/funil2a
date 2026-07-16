@@ -225,14 +225,14 @@ function Landing({ onStart, timer }: { onStart: () => void; timer: string }) {
       </h1>
 
       <p className="text-neutral-300 text-base sm:text-lg max-w-lg">
-        Análise dos jogos, debate diário e camisa em jogo toda semana pra quem
-        tá dentro.
+        Análise dos jogos, debate diário e camisa de futebol toda semana pra
+        quem tá dentro.
       </p>
 
       <div className="w-full max-w-md grid grid-cols-3 gap-2 sm:gap-3">
-        <Benefit label="Análise dos jogos" />
-        <Benefit label="Comunidade ativa" />
-        <Benefit label="Camisa toda semana" />
+        <Benefit icon="⚽" label="Análise diária" />
+        <Benefit icon="🔥" label="Comunidade" />
+        <Benefit icon="👕" label="Camisa semanal" />
       </div>
 
       <button
@@ -408,10 +408,13 @@ function Testimonial({ name, text }: { name: string; text: string }) {
   );
 }
 
-function Benefit({ label }: { label: string }) {
+function Benefit({ icon, label }: { icon: string; label: string }) {
   return (
-    <div className="rounded-xl bg-black/60 border border-neutral-800 px-2 py-3 text-center text-xs sm:text-sm font-medium text-neutral-200">
-      {label}
+    <div className="rounded-xl bg-black/60 border border-neutral-800 py-3 px-2 flex flex-col items-center justify-center gap-1.5 text-center">
+      <div className="text-xl leading-none">{icon}</div>
+      <div className="text-[11px] sm:text-xs font-medium text-neutral-200 leading-tight">
+        {label}
+      </div>
     </div>
   );
 }
