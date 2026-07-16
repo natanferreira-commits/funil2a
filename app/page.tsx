@@ -62,7 +62,7 @@ export default function Page() {
   }, [step]);
 
   const questionIndex = QUESTION_STEPS.indexOf(step);
-  const showTopBar = step !== "landing" && step !== "loading" && step !== "final";
+  const showTopBar = step !== "loading" && step !== "final";
 
   return (
     <main className="min-h-screen w-full flex flex-col overflow-hidden">
@@ -82,9 +82,7 @@ export default function Page() {
 
       <div className="flex-1 flex items-start sm:items-center justify-center px-4 py-8 sm:py-12">
         <div className="w-full max-w-2xl">
-          {step === "landing" && (
-            <Landing onStart={() => setStep("q1")} timer={formatTime(seconds)} />
-          )}
+          {step === "landing" && <Landing onStart={() => setStep("q1")} />}
 
           {questionIndex >= 0 && (
             <QuestionShell
@@ -221,15 +219,9 @@ export default function Page() {
 }
 
 // ============= LANDING =============
-function Landing({ onStart, timer }: { onStart: () => void; timer: string }) {
+function Landing({ onStart }: { onStart: () => void }) {
   return (
     <div className="flex flex-col items-center text-center gap-3 sm:gap-5 pt-[calc(28vh+30px)] sm:pt-[calc(22vh+30px)]">
-      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-brand-gold/30 text-xs font-medium">
-        <span className="w-2 h-2 rounded-full bg-brand-gold pulse-dot" />
-        <span className="text-neutral-300">Próxima vaga expira em</span>
-        <span className="text-brand-gold font-mono">{timer}</span>
-      </div>
-
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/40 text-brand-gold text-xs font-semibold uppercase tracking-wider">
         Grupo Gratuito
       </div>
@@ -255,17 +247,13 @@ function Landing({ onStart, timer }: { onStart: () => void; timer: string }) {
         onClick={onStart}
         className="mt-2 w-full max-w-md group inline-flex items-center justify-center gap-2 py-4 rounded-2xl bg-brand-gold text-black font-bold text-lg shadow-gold hover:brightness-110 active:scale-[0.98] transition"
       >
-        Responder teste e liberar minha vaga
+        Liberar minha vaga
         <span className="group-hover:translate-x-0.5 transition">→</span>
       </button>
 
       <p className="text-xs text-neutral-500 max-w-md">
         Leva 30 segundos. Sem cadastro, sem cartão.
       </p>
-
-      <div className="text-xs text-neutral-500 flex items-center gap-2 mt-1">
-        <span>98% das vagas de hoje já preenchidas</span>
-      </div>
     </div>
   );
 }
