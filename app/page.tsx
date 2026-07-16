@@ -65,7 +65,7 @@ export default function Page() {
   const showTopBar = step !== "landing" && step !== "loading" && step !== "final";
 
   return (
-    <main className="min-h-screen w-full flex flex-col">
+    <main className="min-h-screen w-full flex flex-col overflow-hidden">
       {showTopBar && (
         <div className="w-full bg-black/70 border-b border-brand-gold/25 backdrop-blur">
           <div className="max-w-2xl mx-auto px-4 py-2 flex items-center justify-between text-xs sm:text-sm">
@@ -223,7 +223,7 @@ export default function Page() {
 // ============= LANDING =============
 function Landing({ onStart, timer }: { onStart: () => void; timer: string }) {
   return (
-    <div className="flex flex-col items-center text-center gap-6 sm:gap-8 pt-[48vh] sm:pt-[35vh]">
+    <div className="flex flex-col items-center text-center gap-3 sm:gap-5 pt-[28vh] sm:pt-[22vh]">
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-brand-gold/30 text-xs font-medium">
         <span className="w-2 h-2 rounded-full bg-brand-gold pulse-dot" />
         <span className="text-neutral-300">Próxima vaga expira em</span>
@@ -234,13 +234,13 @@ function Landing({ onStart, timer }: { onStart: () => void; timer: string }) {
         Grupo Gratuito
       </div>
 
-      <h1 className="text-3xl sm:text-5xl font-black leading-tight max-w-xl">
+      <h1 className="text-2xl sm:text-5xl font-black leading-tight max-w-xl">
         O grupo do{" "}
         <span className="text-brand-gold">Dupla Aposta</span> é feito pra quem
         curte futebol de verdade.
       </h1>
 
-      <p className="text-neutral-300 text-base sm:text-lg max-w-lg">
+      <p className="text-neutral-300 text-sm sm:text-lg max-w-lg">
         Análise dos jogos, debate diário e camisa de futebol toda semana pra
         quem tá dentro.
       </p>
