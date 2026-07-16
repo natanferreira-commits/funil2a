@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Quiz Dupla Aposta — Descubra seu grupo",
+  title: "Quiz Dupla Aposta | Descubra seu grupo",
   description:
     "Teste rápido pra liberar sua vaga no grupo gratuito do Dupla Aposta.",
   robots: { index: false, follow: false }

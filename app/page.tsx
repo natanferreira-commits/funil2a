@@ -94,7 +94,7 @@ export default function Page() {
               {step === "q1" && (
                 <QuestionCard
                   title="Qual seu nível com apostas em futebol?"
-                  subtitle="Sem julgamento — quero entender de onde tu parte."
+                  subtitle="Sem julgamento. Quero entender de onde tu parte."
                   options={[
                     {
                       value: "iniciante",
@@ -348,7 +348,7 @@ function QuestionCard({
       </div>
 
       <p className="text-xs text-neutral-500 text-center">
-        Toca pra selecionar — avança automaticamente
+        Toca pra selecionar. Avança automaticamente.
       </p>
     </div>
   );
@@ -381,16 +381,16 @@ function Intermezzo({ onContinue }: { onContinue: () => void }) {
           Quem tá dentro fala
         </div>
         <Testimonial
-          name="Rafael, torcedor do Palmeiras"
-          text="A comunidade discute cada jogo. Já entrei em grupo pago que tinha menos gente falando."
+          name="Rafael, palmeirense"
+          text="grupo é ativo demais mano, tem gente falando o dia todo. tô achando doido"
         />
         <Testimonial
-          name="Bruno, SP"
-          text="Cai bem na minha rotina — vejo o boletim antes do jogo e discuto com a galera durante."
+          name="Bruno, de SP"
+          text="entrei achando que era mais um, mas o pessoal é raiz. tô no grupo faz uns 3 meses"
         />
         <Testimonial
-          name="Carol, RJ"
-          text="Só pra debater futebol já valeu. A camisa que eu ganhei na semana passada foi bônus."
+          name="Carolina, do Rio"
+          text="ganhei a camisa do meu time semana retrasada... ainda tô impressionada, sério"
         />
       </div>
 
@@ -419,7 +419,7 @@ function Testimonial({ name, text }: { name: string; text: string }) {
   return (
     <div className="rounded-xl bg-neutral-950/60 border border-neutral-800 p-4">
       <p className="text-sm text-neutral-200">"{text}"</p>
-      <p className="text-xs text-neutral-500 mt-2">— {name}</p>
+      <p className="text-xs text-neutral-500 mt-2">{name}</p>
     </div>
   );
 }
@@ -556,11 +556,11 @@ function buildPersonalCopy(answers: Answers) {
     );
   else if (answers.nivel === "casual")
     parts.push(
-      "Tu já aposta casualmente — o grupo vai te dar rotina e estrutura pra melhorar."
+      "Tu já aposta casualmente, então o grupo vai te dar rotina e estrutura pra melhorar."
     );
   else if (answers.nivel === "veterano")
     parts.push(
-      "Tu já tem estrada — o grupo vai te dar debate de alto nível e visão nova de mercados."
+      "Tu já tem estrada, então o grupo vai te dar debate de alto nível e visão nova de mercados."
     );
 
   if (answers.frequencia === "diaria")
@@ -577,7 +577,7 @@ function buildPersonalCopy(answers: Answers) {
     );
 
   if (parts.length === 0)
-    return "Nossa comunidade vai te receber bem — todo dia rola conteúdo, debate e ação por dentro do grupo.";
+    return "Nossa comunidade vai te receber bem. Todo dia rola conteúdo, debate e ação por dentro do grupo.";
 
   return parts.join(" ");
 }
@@ -599,7 +599,7 @@ function Footer() {
           de 18 anos.
         </p>
         <p className="text-[10px] text-neutral-600">
-          © Dupla Aposta — todos os direitos reservados.
+          © Dupla Aposta. Todos os direitos reservados.
         </p>
       </div>
     </footer>
