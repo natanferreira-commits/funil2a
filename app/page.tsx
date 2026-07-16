@@ -223,7 +223,7 @@ export default function Page() {
 // ============= LANDING =============
 function Landing({ onStart, timer }: { onStart: () => void; timer: string }) {
   return (
-    <div className="flex flex-col items-center text-center gap-3 sm:gap-5 pt-[28vh] sm:pt-[22vh]">
+    <div className="flex flex-col items-center text-center gap-3 sm:gap-5 pt-[calc(28vh+30px)] sm:pt-[calc(22vh+30px)]">
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-brand-gold/30 text-xs font-medium">
         <span className="w-2 h-2 rounded-full bg-brand-gold pulse-dot" />
         <span className="text-neutral-300">Próxima vaga expira em</span>
