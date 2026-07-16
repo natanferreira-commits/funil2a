@@ -122,11 +122,23 @@ export default function Page() {
               {step === "q2" && (
                 <QuestionCard
                   title="Só pra confirmar que tu é do meio 👀"
-                  subtitle="Quantos jogadores tem em campo em cada time?"
+                  subtitle="Qual seleção ganhou a última Copa do Mundo?"
                   options={[
-                    { value: "10", label: "10", hint: "Só o time ofensivo" },
-                    { value: "11", label: "11", hint: "Onze em campo" },
-                    { value: "12", label: "12", hint: "Um a mais" }
+                    {
+                      value: "franca",
+                      label: "França",
+                      hint: "Vice em 2022"
+                    },
+                    {
+                      value: "argentina",
+                      label: "Argentina",
+                      hint: "Messi levantou a taça"
+                    },
+                    {
+                      value: "brasil",
+                      label: "Brasil",
+                      hint: "Ficamos nas quartas"
+                    }
                   ]}
                   onSelect={(v) => {
                     setAnswers((a) => ({ ...a, q2: v }));
@@ -137,19 +149,23 @@ export default function Page() {
 
               {step === "q3" && (
                 <QuestionCard
-                  title="Última do teste rápido 😄"
-                  subtitle="Onde vai ser sediada a Copa do Mundo de 2026?"
+                  title="Última do teste 😄"
+                  subtitle="Quem fez o gol do Brasil que deu o título em 2002?"
                   options={[
-                    { value: "brasil", label: "Brasil", hint: "Voltando pra casa" },
                     {
-                      value: "usa-mex-can",
-                      label: "EUA, México e Canadá",
-                      hint: "Três sedes juntas"
+                      value: "rivaldo",
+                      label: "Rivaldo",
+                      hint: "Craque na Coreia/Japão"
                     },
                     {
-                      value: "argentina",
-                      label: "Argentina",
-                      hint: "Em cima do último título"
+                      value: "ronaldinho",
+                      label: "Ronaldinho Gaúcho",
+                      hint: "Da falta contra a Inglaterra"
+                    },
+                    {
+                      value: "ronaldo",
+                      label: "Ronaldo Fenômeno",
+                      hint: "Os dois gols da final"
                     }
                   ]}
                   onSelect={() => setStep("q4")}
